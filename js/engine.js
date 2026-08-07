@@ -553,6 +553,8 @@ function updateBattle(dt) {
     if (KEY['ArrowRight'] || KEY['KeyD']) mx += 1;
     if (KEY['ArrowUp'] || KEY['KeyW']) my -= 1;
     if (KEY['ArrowDown'] || KEY['KeyS']) my += 1;
+    const T = window.TOUCH;
+    if (T && (T.mx || T.my)) { mx += T.mx; my += T.my; }
     const spdMul = G.speedT > 0 ? (1 + G.speedMul) : 1;
     if (p.strikeT > 0) {
       p.strikeT -= dt;
@@ -1399,6 +1401,7 @@ function updateBattle(dt) {
     chooseOption,
     feedBeast, feedCost, setTeam,
     beastEvoLv,
+    useUlt,
     togglePause() { if (G.state === 'battle' || G.state === 'pause') { G.paused = !G.paused; UI.show(G.paused ? 'pause' : 'battle'); } },
     resumeBattle() { G.paused = false; G.state = 'battle'; UI.show('battle'); },
     toHub() { G.state = 'hub'; UI.show('hub'); },

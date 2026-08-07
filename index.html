@@ -2,19 +2,34 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0d0f1c">
 <title>神兽纪元 · 智慧神兽宇宙</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<canvas id="game"></canvas>
-<div id="ui" class="hidden"></div>
-<div id="toast" class="hidden"></div>
+<div id="wrap">
+  <canvas id="game"></canvas>
+  <div id="ui" class="hidden"></div>
+  <div id="touch-layer" class="hidden">
+    <div id="joystick">
+      <div id="joystick-knob"></div>
+    </div>
+    <div id="ult-btns">
+      <div class="ult-btn" id="ult1">技 1</div>
+      <div class="ult-btn" id="ult2">技 2</div>
+    </div>
+    <div class="touch-btn" id="pause-btn">⏸</div>
+  </div>
+</div>
 <script src="js/sprites.js"></script>
 <script src="js/data.js"></script>
 <script src="js/engine.js"></script>
 <script src="js/ui.js"></script>
 <script src="js/minigames.js"></script>
+<script src="js/touch.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -571,6 +571,7 @@ window.UI = (function () {
   function show(state, payload) {
     Engine.Sfx.unlock();
     const u = uiEl();
+    if (window.TouchLayer && window.TouchLayer.setVisible) window.TouchLayer.setVisible(state === 'battle');
     if (state === 'battle') { u.innerHTML = ''; u.classList.add('hidden'); return; }
     u.classList.remove('hidden');
     if (state === 'title') showTitle();
